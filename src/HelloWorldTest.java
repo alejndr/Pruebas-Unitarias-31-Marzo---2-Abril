@@ -25,8 +25,10 @@ class HelloWorldTest {
 //	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testSuma() {
+		HelloWorld c = new HelloWorld();
+		int salida = c.sum(5, 7);
+		assertEquals(12, salida);
 	}
 
 }

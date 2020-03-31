@@ -2,8 +2,8 @@ import java.util.StringTokenizer;
 
 public class Calculation {  
   
-    public static int findMax(int arr[]){  
-        int max = 0; 
+    public static int findMax(int[] arr){  
+        int max = arr[0]; 
         for(int i=1;i<arr.length;i++){  
             if(max<arr[i])  
                 max=arr[i];  
@@ -28,7 +28,8 @@ public class Calculation {
 	  
 	        result.append(sb);  
 	        result.append(" ");  
-        }  
-        return result.toString();  
+        }
+        
+        return result.toString().trim();  
     }  
 }  

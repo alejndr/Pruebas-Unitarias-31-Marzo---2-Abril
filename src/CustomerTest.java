@@ -44,5 +44,13 @@ class CustomerTest {
         }, "Age can't be a negative number.");
   
     }
+	
+	@Test()
+	public void testSetValidAge() {
+		Customer customer = new Customer();
+		customer.setAge(35);
+		assertEquals(35, customer.getAge());
+  
+    }
 
 }

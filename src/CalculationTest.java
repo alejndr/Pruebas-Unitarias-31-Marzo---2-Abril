@@ -28,6 +28,19 @@ class CalculationTest {
     public void testFindMax(){  
         assertEquals(4,Calculation.findMax(new int[]{1,3,4,2}));  
         assertEquals(-1,Calculation.findMax(new int[]{-12,-1,-3,-4,-2}));  
-    }  
+    } 
+	
+	@Test  
+    public void testCube(){  
+        assertEquals(125,Calculation.cube(5));  
+        assertEquals(-125,Calculation.cube(-5));  
+        assertEquals(8,Calculation.cube(2));
+        assertEquals(-8,Calculation.cube(-2));
+    } 
+	
+	@Test  
+    public void testReverseWord(){  
+        assertEquals("aloH éuq lat",Calculation.reverseWord("Hola qué tal"));  
+    } 
 
 }

@@ -7,29 +7,45 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-
 class CuentaTest {
 
+	private Cuenta c;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		// System.out.println("BeforeAll");
+		System.out.println("BeforeAll");
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-		// System.out.println("AfterAll");
+		System.out.println("AfterAll");
 	}
 
 	@BeforeEach
-	void setUp() throws Exception {
-		// System.out.println("BeforeEach");
+	void setUp1() throws Exception {
+		System.out.println("BeforeEach1");
+	}
+	
+	@BeforeEach
+	void setUp2() throws Exception {
+		System.out.println("BeforeEach2");
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		// System.out.println("AfterEach");
+		System.out.println("AfterEach");
 	}
 
+	
+	private void setUp3() {
+		
+	}
+	
+	private void setUp4() {
+		
+	}
+	
+	
 	@Test
 	public void testAlCrearCuentaElSaldoEsCero()
     {

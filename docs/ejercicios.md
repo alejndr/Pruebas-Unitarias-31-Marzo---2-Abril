@@ -18,19 +18,19 @@ B) Testear la clase con tests unitarios
 - ¿Volvéis a testear manualmente de forma concienzuda TODO el código de la aplicación cada vez que hay un cambio en cualquier parte de la aplicación? 
 
  
-## Más tests unitarios
+## Más tests unitarios
 
 Programar tests unitarios para todos los métodos de la clase Calculations
 
-## Testeo de Assertions
+## Testeo de Assertions
 
 Programar un test unitario del método setAge() de la clase Customer que compruebe que se lanza la excepción IllegalArgumentException cuando el argumento de entrada es negativo.
 
-## Testeo de cambios de estado internos a la clase
+## Testeo de cambios de estado internos a la clase
 
 Programar un test unitario del método setAge() que compruebe que al llamar al método con una edad válida, es customer se actualiza con dicha edad.
 
-## Interacción con el entorno
+## Interacción con el entorno
 
 Programar tests unitarios para el método GetTimeOfDay de la clase TimeUtils
 
