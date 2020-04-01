@@ -42,7 +42,6 @@ class CustomerTest {
         assertThrows(IllegalArgumentException.class, () -> {
         	customer.setAge(-5);
         }, "Age can't be a negative number.");
-  
     }
 	
 	@Test()
@@ -50,7 +49,6 @@ class CustomerTest {
 		Customer customer = new Customer();
 		customer.setAge(35);
 		assertEquals(35, customer.getAge());
-  
     }
 
 }

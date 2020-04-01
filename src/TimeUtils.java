@@ -2,11 +2,20 @@ import java.time.LocalDateTime;
 
 public class TimeUtils {
 	
-	
-	public static String GetTimeOfDay()
+//	@autowire
+//	private LocalDateTime time;
+//	
+//	public LocalDateTime getTime() {
+//		return time;
+//	}
+//
+//	public void setTime(LocalDateTime time) {
+//		this.time = time;
+//	}
+
+	public static String GetTimeOfDay(LocalDateTime time)
 	{
-		LocalDateTime time = LocalDateTime.now();
-	    if (time.getHour() >= 0 && time.getHour() < 5)
+	    if (time.getHour() >= 0 && time.getHour() < 6)
 	    {
 	        return "Night";
 	    }
@@ -21,5 +30,4 @@ public class TimeUtils {
 	    return "Evening";
 	}
 }
-
 

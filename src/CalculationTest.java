@@ -27,6 +27,9 @@ class CalculationTest {
 	@Test  
     public void testFindMax(){  
         assertEquals(4,Calculation.findMax(new int[]{1,3,4,2}));  
+        assertEquals(7,Calculation.findMax(new int[]{7,3,4,2}));  
+        assertEquals(7,Calculation.findMax(new int[]{7,3,7,2})); 
+        assertEquals(9,Calculation.findMax(new int[]{7,3,7,9})); 
         assertEquals(-1,Calculation.findMax(new int[]{-12,-1,-3,-4,-2}));  
     } 
 	

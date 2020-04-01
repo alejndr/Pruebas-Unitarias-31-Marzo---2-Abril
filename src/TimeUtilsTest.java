@@ -1,12 +1,12 @@
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//import java.time.LocalDateTime;
-//
-//import org.junit.jupiter.api.AfterAll;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 //
 //public class FakeLocalDateTimeProvider implements ILocalDateTimeProvider
 //{
@@ -19,41 +19,44 @@
 //}
 //
 //
-//class TimeUtilsTest {
-//
-//	@BeforeAll
-//	static void setUpBeforeClass() throws Exception {
-//	}
-//
-//	@AfterAll
-//	static void tearDownAfterClass() throws Exception {
-//	}
-//
-//	@BeforeEach
-//	void setUp() throws Exception {
-//	}
-//
-//	@AfterEach
-//	void tearDown() throws Exception {
-//	}
-//
-//	@Test
-//	void testALas0DevuelveNight() {
-//		
-//		LocalDateTime timeOfDay = new LocalDateTime(2015, java.time.Month.APRIL, 31, 0, 0);
-//		
-//		String salida = TimeUtils.GetTimeOfDay(timeOfDay);
-//		assertEquals("Night", salida);
-//		
-//	}
-//	
-//	@Test
-//	void testALas6DevuelveMorning() {
-//		LocalDateTime timeOfDay = LocalDateTime(2015, 12, 31, 06, 00);
-//		
-//		String salida = TimeUtils.GetTimeOfDay(timeOfDay);
-//		assertEquals("Morning", salida);
-//	}
+class TimeUtilsTest {
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		// Restaurar la hora
+	}
+
+	@Test
+	void testALas0DevuelveNight() {
+		
+		LocalDateTime timeOfDay = LocalDateTime.of(2020, java.time.Month.APRIL, 1, 0, 0);
+		//mock, fake, dummy, stub
+		
+		// TimeUtils.setTime(timeOfDay);
+		
+		String salida = TimeUtils.GetTimeOfDay(timeOfDay);
+		assertEquals("Night", salida);
+	}
+	
+	@Test
+	void testALas6DevuelveMorning() {
+		LocalDateTime timeOfDay = LocalDateTime.of(2020, java.time.Month.APRIL, 1, 6, 0);
+		
+		String salida = TimeUtils.GetTimeOfDay(timeOfDay);
+		assertEquals("Morning", salida);
+	}
 //	
 //	@Test
 //	void testALas6DevuelveMorning() {
@@ -68,10 +71,10 @@
 //		
 //		assertEquals("Morning", salida);
 //	}
-//
-//}
-//
-//
-//
-//
-//
+
+}
+
+
+
+
+
