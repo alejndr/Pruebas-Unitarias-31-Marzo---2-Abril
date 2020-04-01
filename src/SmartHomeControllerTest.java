@@ -70,5 +70,21 @@ class SmartHomeControllerTest {
 		
 		assertTrue(fakeSwitcher.methodTurnOnHasBeenCalled);
 	}
+	
+	@Test
+	void actuateLightsCuandoSeDetectaMovimientoYEsEveningSeEnciende_ConMockito() {
+		LocalDateTime fakeTime = mock(LocalDateTime.class);
+		when(fakeTime.getHour()).thenReturn(19);
+	    
+		LocalDateTime fakeSwitcher = mock(BackyardLightSwitcher.class);
+		
+		SmartHomeController c = new SmartHomeController();
+		c.setTime(fakeTime);
+		c.setSwitcher(fakeSwitcher);
+		
+		c.actuateLights(true);
+		
+		verify(fakeSwitcher).TurnOn();
+	}
 
 }

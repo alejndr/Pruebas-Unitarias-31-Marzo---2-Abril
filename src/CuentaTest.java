@@ -119,7 +119,7 @@ class CuentaTest {
     {
         Cuenta c = new Cuenta();
         c.ingreso(500);
-        assertEquals(500, c.getSaldo());
+
         c.retirada(100);
         assertEquals(400, c.getSaldo());
     }
