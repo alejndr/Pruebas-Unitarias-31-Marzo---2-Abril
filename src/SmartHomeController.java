@@ -5,6 +5,9 @@ public class SmartHomeController
 	@autowire
 	private LocalDateTime time;
 	
+	@autowire 
+	private BackyardLightSwitcherInterface switcher;
+	
     private LocalDateTime lastMotionTime;
     
     public LocalDateTime getTime() {
@@ -23,8 +26,15 @@ public class SmartHomeController
 		this.lastMotionTime = lastMotionTime;
 	}
 
+	public BackyardLightSwitcherInterface getSwitcher() {
+		return switcher;
+	}
 
-	public void ActuateLights(boolean motionDetected)
+	public void setSwitcher(BackyardLightSwitcherInterface switcher) {
+		this.switcher = switcher;
+	}
+
+	public void actuateLights(boolean motionDetected)
     {
         // Update the time of last motion.
         if (motionDetected)
@@ -36,12 +46,12 @@ public class SmartHomeController
         String timeOfDay = TimeUtils.GetTimeOfDay(this.time);
         if (motionDetected && (timeOfDay == "Evening" || timeOfDay == "Night"))
         {
-            BackyardLightSwitcher.TurnOn();
+            this.switcher.TurnOn();
         }
         // If no motion is detected for one minute, or if it is morning or day, turn the light off.
         else if (this.time.isBefore(this.lastMotionTime.plusSeconds(60)) || (timeOfDay == "Morning" || timeOfDay == "Noon"))
         {
-            BackyardLightSwitcher.TurnOff();
+            this.switcher.TurnOff();
         }
     }
 }
