@@ -39,7 +39,5 @@ http://gmetrics.sourceforge.net/gmetrics-CrapMetric.html
 
 ## Los tests como parte de la documentación
 
-> ../phpunit-5.7.phar test --testdox doc.html
-
-- Importancia de los nombres de los tests
+- Importancia de los nombres de los tests. Debe comunicar la especificación o caso de uso concreto que está probando.
 - Importancia de que cada tests se dedique a una úncia especificación

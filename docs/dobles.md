@@ -28,7 +28,7 @@ public void ActuateLights_MotionDetectedAtNight_TurnsOnTheLight()
     controller.ActuateLights(true, turnOn, turnOff);
 
     // Assert
-    Assert.IsTrue(turnedOnCalled);
+    assertTrue(turnedOnCalled);
 }
 ```
 
@@ -38,7 +38,7 @@ Stubs
 Los Stubs son métodos hardcodeados que devuelven siempre lo mismo sin importar los datos que reciba de entrada ni las condiciones del entorno...
 
 ```java
-public bool FileExists(String path)
+public bool fileExists(String path)
 {
   return true;
 }
@@ -73,25 +73,26 @@ Normalmente se usan para testear si se ha llamado a cierto método, o si se ha l
 
 ```java
 
-class FakeBackyardLightSwitcher {
-	public static bool turnedOnCalled  = false;
-	public static turnOn() {
+class FakeBackyardLightSwitcher implements BackyardLightSwitcherInterface {
+	public bool turnedOnCalled  = false;
+	public turnOn() {
 		this.turnedOnCalled = true;
 	}
-	public static turnOn() {}
+	public static turnOff() {}
 }
 
 @Test
 public void ActuateLights_MotionDetectedAtNight_TurnsOnTheLight()
 {
     FakeDateTimeProvider fakeDateTimeProvider = new FakeDateTimeProvider(new DateTime(2015, 12, 31, 23, 59, 59));
-    SmartHomeController controller = new SmartHomeController(fakeDateTimeProvider, FakeBackyardLightSwitcher.class);
+    BackyardLightSwitcherInterface fakeBackyardLightSwitcher = new FakeBackyardLightSwitcher();
+    SmartHomeController controller = new SmartHomeController(fakeDateTimeProvider, fakeBackyardLightSwitcher);
 
     // Act
     controller.ActuateLights(true);
 
     // Assert
-    AssertTrue(FakeBackyardLightSwitcher.turnedOnCalled);
+    assertTrue(FakeBackyardLightSwitcher.turnedOnCalled);
 }
 ```
 

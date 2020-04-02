@@ -65,7 +65,7 @@ cuenta. Voy a optar por un getter típico.
 public function alCrearCuentaElSaldoEsCero()
 {
     Cuenta c = new Cuenta();
-    assertEqual(0, $c->getSaldo());
+    assertEquals(0, $c->getSaldo());
 }
 ```
 
